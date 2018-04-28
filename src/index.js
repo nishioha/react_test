@@ -4,15 +4,15 @@ import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
-const List = () => {
+const List = (props) => {
   return (
     <ul>
-      <li>hoge</li>
-      <li>huga</li>
-      <li>piyo</li>
+      {props.items.map((item, i) => (
+        <li>{item}</li>
+      ))}
     </ul>
   );
 }
 
-ReactDOM.render(<List />, document.getElementById('root'));
+ReactDOM.render(<List items={['hoge', 'huga', 'piyo']}/>, document.getElementById('root'));
 registerServiceWorker();
